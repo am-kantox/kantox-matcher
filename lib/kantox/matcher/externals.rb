@@ -1,0 +1,5 @@
+require 'kantox/matcher/externals/rate'
+require 'kantox/matcher/externals/rate_trigger'
+require 'kantox/matcher/externals/claim'
+require 'kantox/matcher/externals/claim_trigger'
+require 'kantox/matcher/externals/broker'

@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+
+require 'logger'
+module Kantox
+  module Matcher
+    LOGGER = Logger.new(STDOUT)
+    LOGGER.level = ENV['DEBUG'] ? Logger::DEBUG : Logger::INFO
+  end
+end
+
+require 'kantox/matcher'
+
+i = Kantox::Matcher::Env.instance
+
+ENV['MATCHER_DAEMON'] ? i.threads.values.each { |thr| thr.join } : Kantox::Matcher::App.run
